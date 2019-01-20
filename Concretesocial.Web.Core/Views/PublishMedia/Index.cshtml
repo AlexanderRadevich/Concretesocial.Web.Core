@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "List connected profiles";
+    @model ProfileItem[]
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title font-weight-bold">Please select profile</h3>
+    </div>
+    <div class="panel-body">
+        <form asp-controller="PublishMedia" asp-action="Publish" method="post">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+
+                        </th>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            User
+                        </th>
+                        <th>
+                            Followers
+                        </th>
+                        <th>
+                            follows
+                        </th>
+                    </tr>
+                </thead>
+                @foreach (ProfileItem item in Model)
+                {
+
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="@item.id" name="profiles" id="profiles" />
+                        </td>
+                        <td>
+                            @item.id
+                        </td>
+                        <td>
+                            @item.user
+                        </td>
+                        <td>
+                            @item.followers_count
+                        </td>
+                        <td>
+                            @item.follows_count
+                        </td>
+                    </tr>
+                }
+            </table>
+
+            <div class="form-group">
+                <label>Please enter caption</label>
+                <input class="form-control" id="caption" name="caption" placeholder="Caption">
+            </div>
+            <div class="form-group">
+                <label>Please select media type (image or video)</label>
+                <select class="form-control" id="mediaType" name="mediaType">
+                    <option value="image">image</option>
+                    <option value="video">video</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Please enter media url</label>
+                <input class="form-control" id="url" name="url" placeholder="URL">
+                <p class="help-block">
+                    Example: https://cdn.pixabay.com/photo/2018/11/11/16/51/ibis-3809147_1280.jpg
+                    <br />
+                    https://sample-videos.com/video123/mp4/360/big_buck_bunny_360p_2mb.mp4
+                </p>
+            </div>
+            <div class="form-group">
+                <label>Please enter comment</label>
+                <input class="form-control" id="comment" name="comment" placeholder="Comment">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</div>
+

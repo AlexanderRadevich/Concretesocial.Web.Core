@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "List connected profiles";
+    @model ProfileItem[]
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Profiles</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        User
+                    </th>
+                    <th>
+                        Followers
+                    </th>
+                    <th>
+                        follows
+                    </th>
+                </tr>
+            </thead>
+            @foreach(ProfileItem item in Model)
+            {
+             
+            <tr>
+                <td>
+                    @item.id
+                </td>
+                <td>
+                    @item.user
+                </td>
+                <td>
+                    @item.followers_count
+                </td>
+                <td>
+                    @item.follows_count
+                </td>
+            </tr>
+            }
+        </table>
+    </div>
+</div>
+
