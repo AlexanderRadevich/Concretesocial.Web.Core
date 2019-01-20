@@ -1,4 +1,4 @@
-# Concretesocial.Web.Core
+# Concretesocial ASP.NET Core 
 Concretesocial ASP.NET Core Sample Instagram Content Publishing API
 # Instagram Content Publishing API
 This API uses Concrete Social [Instagram Content Publishing API](https://concretesocial.io)
